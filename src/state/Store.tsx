@@ -18,7 +18,8 @@ import {
   XYPosition,
 } from 'react-flow-renderer';
 import { v4 } from 'uuid';
-import { searchClient, store } from '../App';
+import { store } from '../App';
+// import { searchClient } from '../App'
 import { ConfirmationModalModel } from '../components/containers/ConfirmationModal';
 import DefinitionsMenu from '../components/menus/definitions/DefinitionsMenu';
 import { OrbImportWithMeta } from '../components/menus/definitions/OrbDefinitionsMenu';
@@ -678,7 +679,7 @@ const Actions: StoreActions = {
             return;
           }
 
-          const agindex = searchClient.initIndex('orbs-prod');
+          // const agindex = searchClient.initIndex('orbs-prod');
           const agdata = await agindex.findObject<{
             logo_url: string;
             url: string;

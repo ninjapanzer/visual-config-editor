@@ -14,10 +14,10 @@ import Store from './state/Store';
 export const store = createStore(Store);
 export const inspectorWidth = 400;
 
-export const searchClient = algoliasearch(
-  'U0RXNGRK45',
-  '798b0e1407310a2b54b566250592b3fd',
-);
+// export const searchClient = algoliasearch(
+//   'U0RXNGRK45',
+//   '798b0e1407310a2b54b566250592b3fd',
+// );
 
 const Pinned = () => {
   const tooltip = useStoreState((state) => state.tooltip);

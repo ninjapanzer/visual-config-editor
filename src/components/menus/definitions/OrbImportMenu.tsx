@@ -9,7 +9,7 @@ import {
   useSearchBox,
   UseSearchBoxProps,
 } from 'react-instantsearch-hooks-web';
-import { searchClient } from '../../../App';
+// import { searchClient } from '../../../App';
 import DeleteItemIcon from '../../../icons/ui/DeleteItemIcon';
 import Loading from '../../../icons/ui/Loading';
 import { useStoreActions } from '../../../state/Hooks';
@@ -133,61 +133,6 @@ const OrbImportMenu = (props: InspectorDefinitionProps) => {
       </header>
       <TabbedMenu tabs={tabs} activeTab={props.activeTab || 0}>
         <div className="p-6">
-          <InstantSearch searchClient={searchClient} indexName="orbs-prod">
-            {/* <RefinementList attribute="brand" /> */}
-            <p className="font-bold leading-5 tracking-wide">Search Filters</p>
-            {/* <Select className="mt-2 w-full">
-              <option>Recommended Orbs</option> TODO: implement select for recommended orbs
-            </Select> */}
-            <SearchBox placeholder="Search Orb Directory..." />
-            <HitsPerPage
-              hidden
-              items={[{ value: 6, label: '', default: true }]}
-            />
-            <Hits
-              className="overflow-y-auto mt-4"
-              style={{ height: 'calc(100vh - 420px)' }}
-              hitComponent={({ hit }) => {
-                let values = hit as unknown as OrbDefinitionProps;
-
-                return (
-                  <Card
-                    truncate={120}
-                    icon={
-                      <div className="rounded-full bg-white shadow mr-2 mb-2 flex w-6 h-6 p-px">
-                        <img
-                          src={
-                            (hit.logo_url as string) ||
-                            'https://circleci.com/developer/orb-logos/community.png'
-                          }
-                          className="rounded-full my-auto bg-white"
-                          alt={`${hit.name} logo` || 'Orb Logo'}
-                        />
-                      </div>
-                    }
-                    pinned={
-                      <p className="bg-circle-gray-300 rounded-full text-xs p-px my-auto px-2">
-                        {hit.version as string}
-                      </p>
-                    }
-                    key={hit.full_name as string}
-                    title={hit.name as string}
-                    description={hit.description as string}
-                    onClick={() => {
-                      navigateTo({
-                        component: OrbDefinitionMenuNav,
-                        props: values,
-                      });
-                    }}
-                  />
-                );
-              }}
-            />
-
-            <Footer centered>
-              <Pagination padding={1}></Pagination>
-            </Footer>
-          </InstantSearch>
         </div>
       </TabbedMenu>
     </div>
